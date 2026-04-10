@@ -1,14 +1,16 @@
 # Airport Security AI System
 
-Computer vision system for detecting prohibited items in X-ray scans for airport security screening.
+> Applied Computer Vision project focused on real-world airport security systems.
+
+Computer vision system for detecting prohibited items in X-ray scans using deep learning (YOLO-based models).
 
 ---
 
 ## Overview
 
-This project implements an AI-based system for automated detection of dangerous and prohibited objects in X-ray images used in airport security.
+This project implements an AI-based solution for automated detection of dangerous and prohibited objects in X-ray images used in airport security screening.
 
-The system was developed as part of a real-world task in the security domain and focuses on improving the efficiency and reliability of passenger screening processes.
+The system was developed as part of a real-world security task and aims to improve the efficiency, consistency, and reliability of passenger inspection processes.
 
 ---
 
@@ -16,36 +18,38 @@ The system was developed as part of a real-world task in the security domain and
 
 - Object detection using YOLOv8  
 - Additional experiments with Keras CV models  
-- Custom dataset with annotated X-ray images  
-- Data preprocessing using OpenCV  
+- Custom dataset of annotated X-ray images  
+- Data preprocessing and augmentation using OpenCV  
 - Model evaluation using precision, recall, and mAP metrics  
-- Comparative analysis of different training configurations  
+- Comparative analysis of multiple training configurations  
 
 ---
 
 ## Dataset
 
-- ~9,000+ images (processed and augmented)  
+- ~9,000+ processed and augmented images  
 - Annotated using CVAT  
 
 Includes:
 - normal passenger scans  
-- prohibited / dangerous objects  
+- prohibited and dangerous objects  
 
 Preprocessing:
 - grayscale conversion  
-- multiple augmented copies per image  
+- dataset augmentation (multiple variations per image)  
 - dataset balancing  
 
 ---
 
 ## Experiments
 
-Multiple model configurations were trained and evaluated:
+The project includes experimental evaluation of multiple model configurations:
 
-- YOLOv8 (extended training, ~100 epochs)  
-- YOLOv8 (short training, ~30 epochs)  
+- YOLOv8 (extended training ~100 epochs)  
+- YOLOv8 (short training ~30 epochs)  
 - Keras CV YOLO-based detector  
+
+The goal was to analyze trade-offs between detection accuracy, generalization, and training efficiency.
 
 ---
 
@@ -57,12 +61,12 @@ Best model performance:
 - Recall: ~36.8%  
 - mAP@0.5: ~40.7%  
 
-Observations:
+### Observations
 
-- Longer training improved detection quality  
-- Validation results indicated overfitting in some configurations  
-- Keras CV model showed weaker generalization compared to YOLOv8  
-- Dataset quality and augmentation strongly influenced results  
+- Longer training improved detection performance  
+- Overfitting was observed in some configurations  
+- Keras CV models showed weaker generalization compared to YOLOv8  
+- Dataset quality and augmentation significantly impacted results  
 
 ---
 
@@ -76,12 +80,22 @@ Observations:
 
 ---
 
+## Research & Experiments
+
+This project follows an experimental approach to model development:
+
+- multiple training strategies were tested  
+- configurations were compared using standard CV metrics  
+- results were analyzed to guide further improvements  
+
+---
+
 ## Future Work
 
 - Improve generalization and reduce overfitting  
 - Expand dataset with more diverse samples  
 - Optimize model architecture and hyperparameters  
-- Deploy system for real-time security screening  
+- Deploy as a real-time security inspection system  
 
 ---
 
